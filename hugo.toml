@@ -2,13 +2,18 @@ baseURL = "https://afrode-byte.github.io/"
 title = "Jailton De Macena Lima"
 theme = "hugo-coder"
 languageCode = "en-us"
+defaultContentLanguage = "en"
+
+[pagination]
+pagerSize = 10
 
 [params]
 author = "Jailton De Macena Lima"
-info = "Web Penetration Tester | BSCP | eWPT"
-description = "Portfolio focused on Web Application Security, API Security and Offensive Security."
-keywords = "pentest, web security, bug bounty, burp suite, owasp, api security"
+info = "Web Application Penetration Tester"
+description = "Personal portfolio focused on Web Application Security, Offensive Security Research and practical penetration testing methodology."
+keywords = "web application security, penetration testing, offensive security, owasp wstg, api security, burp suite"
 colorScheme = "dark"
+hideColorSchemeToggle = false
 
 [[params.social]]
 name = "GitHub"
@@ -20,4 +25,39 @@ url = "https://github.com/afrode-byte/"
 name = "LinkedIn"
 icon = "fa-brands fa-linkedin"
 weight = 2
-url = "https://www.linkedin.com/in/jailton-de-macena-lima/?locale=en-US"
+url = "https://www.linkedin.com/in/jailton-de-macena-lima/"
+
+[[menu.main]]
+name = "About"
+weight = 1
+url = "about/"
+
+[[menu.main]]
+name = "Knowledge"
+weight = 2
+url = "knowledge/"
+
+[[menu.main]]
+name = "Methodology"
+weight = 3
+url = "methodology/"
+
+[[menu.main]]
+name = "Research"
+weight = 4
+url = "research/"
+
+[[menu.main]]
+name = "Projects"
+weight = 5
+url = "projects/"
+
+[[menu.main]]
+name = "Certifications"
+weight = 6
+url = "certifications/"
+
+[[menu.main]]
+name = "Contact"
+weight = 7
+url = "contact/"
