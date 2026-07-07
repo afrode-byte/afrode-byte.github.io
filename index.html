@@ -106,30 +106,5 @@
             </div>
         </section>
     </div>
-
-    <!-- Script de Tradução Dinâmica -->
-    <script>
-        let currentLang = 'en';
-
-        function toggleLanguage() {
-            const enElements = document.querySelectorAll('.lang-en');
-            const ptElements = document.querySelectorAll('.lang-pt');
-            const btn = document.getElementById('langToggle');
-
-            if (currentLang === 'en') {
-                // Mudar para Português
-                enElements.forEach(el => el.style.display = 'none');
-                ptElements.forEach(el => el.style.display = 'block');
-                btn.textContent = 'EN';
-                currentLang = 'pt';
-            } else {
-                // Mudar para Inglês
-                ptElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'block');
-                btn.textContent = 'PT-BR';
-                currentLang = 'en';
-            }
-        }
-    </script>
 </body>
 </html>
