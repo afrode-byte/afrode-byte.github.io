@@ -1,0 +1,52 @@
+<div id="google_translate_element" aria-hidden="true"></div>
+<script>
+  (function () {
+    var sourceLanguage = "en";
+    var targetLanguage = "pt";
+
+    function readCookie(name) {
+      return document.cookie
+        .split(";")
+        .map(function (item) { return item.trim(); })
+        .filter(function (item) { return item.indexOf(name + "=") === 0; })
+        .map(function (item) { return decodeURIComponent(item.slice(name.length + 1)); })[0] || "";
+    }
+
+    function translatedToPortuguese() {
+      return readCookie("googtrans").indexOf("/" + sourceLanguage + "/" + targetLanguage) !== -1;
+    }
+
+    function setTranslation(language) {
+      var value = language === targetLanguage ? "/" + sourceLanguage + "/" + targetLanguage : "/" + sourceLanguage + "/" + sourceLanguage;
+      document.cookie = "googtrans=" + value + ";path=/";
+      document.cookie = "googtrans=" + value + ";domain=" + window.location.hostname + ";path=/";
+      window.location.reload();
+    }
+
+    function updateButton() {
+      var button = document.querySelector("[data-translate-toggle]");
+      if (!button) return;
+      button.textContent = translatedToPortuguese() ? "PT/EN" : "EN/PT";
+      button.setAttribute("aria-label", translatedToPortuguese() ? "Translate to English" : "Translate to Portuguese");
+    }
+
+    window.googleTranslateElementInit = function () {
+      new google.translate.TranslateElement({
+        pageLanguage: sourceLanguage,
+        includedLanguages: targetLanguage,
+        autoDisplay: false
+      }, "google_translate_element");
+      updateButton();
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+      updateButton();
+      var button = document.querySelector("[data-translate-toggle]");
+      if (!button) return;
+      button.addEventListener("click", function () {
+        setTranslation(translatedToPortuguese() ? sourceLanguage : targetLanguage);
+      });
+    });
+  }());
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

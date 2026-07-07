@@ -2,35 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://afrode-byte.github.io/</loc>
     <lastmod>2026-07-07T09:07:00-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>https://afrode-byte.github.io/contact/</loc>
     <lastmod>2026-07-07T09:07:00-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/research/</loc>
-    <lastmod>2026-07-07T08:50:57-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/certifications/</loc>
+    <loc>https://afrode-byte.github.io/certifications/</loc>
     <lastmod>2026-07-07T08:26:21-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tools/</loc>
-    <lastmod>2026-07-07T08:26:17-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/writeups/</loc>
-    <lastmod>2026-07-07T08:26:14-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2026-07-07T08:26:09-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/methodology/</loc>
-    <lastmod>2026-07-07T08:26:05-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://afrode-byte.github.io/about/</loc>
     <lastmod>2026-07-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://afrode-byte.github.io/tags/burp-suite/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://afrode-byte.github.io/tags/cloudflare/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://afrode-byte.github.io/tags/cross-site-scripting/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://afrode-byte.github.io/tags/html-injection/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://afrode-byte.github.io/posts/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://afrode-byte.github.io/posts/reflected-cross-site-scripting-in-login-functionality/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://afrode-byte.github.io/tags/reflected-xss/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://afrode-byte.github.io/tags/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://afrode-byte.github.io/tags/waf/</loc>
+    <lastmod>2026-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://afrode-byte.github.io/categories/</loc>
   </url>
 </urlset>

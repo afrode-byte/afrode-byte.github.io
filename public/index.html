@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <title></title>
+<head>
+  <title>Afrode</title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light dark">
@@ -10,24 +10,27 @@
 
 
 
-<meta name="author" content="Jailton De Macena Lima">
-<meta name="description" content="Personal portfolio focused on Web Application Security, Offensive Security Research and practical penetration testing methodology.">
+<meta name="author" content="Jailton Lima">
+<meta name="description" content="Portfolio focused on web application security, offensive security research and practical penetration testing methodology.">
 <meta name="keywords" content="web application security, penetration testing, offensive security, owasp wstg, api security, burp suite">
 
 
 
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:description" content="Personal portfolio focused on Web Application Security, Offensive Security Research and practical penetration testing methodology.">
+	<meta name="twitter:title" content="Afrode">
+	<meta name="twitter:description" content="Portfolio focused on web application security, offensive security research and practical penetration testing methodology.">
 
-<meta property="og:url" content="http://localhost:1313/">
-	<meta property="og:description" content="Personal portfolio focused on Web Application Security, Offensive Security Research and practical penetration testing methodology.">
-	<meta property="og:locale" content="en_us">
+<meta property="og:url" content="https://afrode-byte.github.io/">
+	<meta property="og:site_name" content="Afrode">
+	<meta property="og:title" content="Afrode">
+	<meta property="og:description" content="Portfolio focused on web application security, offensive security research and practical penetration testing methodology.">
+	<meta property="og:locale" content="en_US">
 	<meta property="og:type" content="website">
 
 
 
 
-<link rel="canonical" href="http://localhost:1313/">
+<link rel="canonical" href="https://afrode-byte.github.io/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -37,7 +40,7 @@
 
   
   
-  <link rel="stylesheet" href="/css/coder.css" media="screen">
+  <link rel="stylesheet" href="/css/coder.min.f6b1b35a7b02521b25338f6cf58975f9980a6c12847763fe35a48307758cd1e7.css" integrity="sha256-9rGzWnsCUhslM49s9Yl1&#43;ZgKbBKEd2P&#43;NaSDB3WM0ec=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -47,13 +50,19 @@
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
   
 
 
 
  
 
+
+  
+  
+    
+    <link rel="stylesheet" href="/scss/custom.min.6c46c54dce27d5bd9bdedc47d83f8b3ef04f26e4db1c5fbfda9883ccd6f2eb4b.css" integrity="sha256-bEbFTc4n1b2b3txH2D&#43;LPvBPJuTbHF&#43;/2piDzNby60s=" crossorigin="anonymous" media="screen" />
+  
 
 
 
@@ -68,7 +77,7 @@
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link rel="alternate" type="application/rss+xml" href="/index.xml" title="" />
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="Afrode" />
 
 
 <meta name="generator" content="Hugo 0.163.3">
@@ -98,8 +107,8 @@
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/">
-      
+    <a class="navigation-title" href="https://afrode-byte.github.io/">
+      Afrode
     </a>
     
     
@@ -111,19 +120,15 @@
         
           
             <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
               <a class="navigation-link " href="/about/">About</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link " href="/methodology/">Methodology</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link " href="/research/">Research</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link " href="/projects/">Projects</a>
+              <a class="navigation-link " href="/posts/">Posts</a>
             </li>
           
             <li class="navigation-item">
@@ -135,7 +140,12 @@
             </li>
           
         
-        
+        <li class="navigation-item menu-separator">
+          <span>|</span>
+        </li>
+        <li class="navigation-item">
+          <button class="language-switch" type="button" data-translate-toggle>EN/PT</button>
+        </li>
       </ul>
     
   </section>
@@ -150,7 +160,16 @@
 
 
 
-    <h1>Jailton De Macena Lima</h1>
+    <p class="hero-intro">Hello, I'm</p>
+<h1>Jailton Lima</h1>
+
+<div class="ssti-proof" aria-label="SSTI proof of concept">
+  <strong>Jinja2 SSTI</strong>
+  <code>$ {{7*'7'}}-{{ namespace.__init__.__globals__.os.popen('whoami').read() }}</code>
+  <span>Command output</span>
+  <code>$ 7777777-Afrode</code>
+</div>
+
 
 <h2>Web Application Penetration Tester</h2>
 
@@ -175,14 +194,62 @@
       </li>
     
   
+    
+      <li>
+        <a href="https://app.intigriti.com/researcher/profile/jailton" aria-label="Intigriti"   >
+          <i class="fa-solid fa-bug" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
 </ul>
 
   </div>
 
-  
+  <div class="hero-summary">
+  <p>
+    I help identify, validate and explain security weaknesses in modern web applications
+    through structured manual testing, clear evidence and practical remediation guidance.
+  </p>
+
+  <div class="hero-actions" aria-label="Portfolio actions">
+    <a class="button button-primary" href="/posts/">Read writeups</a>
+    <a class="button button-secondary" href="/contact/">Get in touch</a>
+  </div>
+</div>
 
 </section>
 
+<section class="container portfolio-sections" aria-label="Portfolio highlights">
+  <div class="section-grid">
+    <article class="feature-card">
+      <span class="feature-kicker">Focus</span>
+      <h2>Web Application Security</h2>
+      <p>
+        Manual testing focused on understanding the full application attack surface,
+        from common vulnerability classes to subtle logic flaws and unusual behaviors.
+      </p>
+    </article>
+
+    <article class="feature-card">
+      <span class="feature-kicker">Method</span>
+      <h2>Structured Testing</h2>
+      <p>
+        Work guided by OWASP WSTG, PortSwigger's Burp Suite testing workflow,
+        bug bounty practice, vulnerability research and lessons learned from each pentest.
+      </p>
+    </article>
+
+    <article class="feature-card">
+      <span class="feature-kicker">Output</span>
+      <h2>Clear Technical Evidence</h2>
+      <p>
+        Findings documented with reproducible steps, impact, risk context and
+        recommendations that engineering teams can act on.
+      </p>
+    </article>
+  </div>
+</section>
 
 
     </div>
@@ -192,7 +259,7 @@
     ©
     
     2026
-     Jailton De Macena Lima 
+     Jailton Lima 
     ·
     
     Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
@@ -206,7 +273,7 @@
 
   
   
-  <script src="/js/coder.js"></script>
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
   
 
   
@@ -247,7 +314,58 @@
 
   
 
-  
+  <div id="google_translate_element" aria-hidden="true"></div>
+<script>
+  (function () {
+    var sourceLanguage = "en";
+    var targetLanguage = "pt";
+
+    function readCookie(name) {
+      return document.cookie
+        .split(";")
+        .map(function (item) { return item.trim(); })
+        .filter(function (item) { return item.indexOf(name + "=") === 0; })
+        .map(function (item) { return decodeURIComponent(item.slice(name.length + 1)); })[0] || "";
+    }
+
+    function translatedToPortuguese() {
+      return readCookie("googtrans").indexOf("/" + sourceLanguage + "/" + targetLanguage) !== -1;
+    }
+
+    function setTranslation(language) {
+      var value = language === targetLanguage ? "/" + sourceLanguage + "/" + targetLanguage : "/" + sourceLanguage + "/" + sourceLanguage;
+      document.cookie = "googtrans=" + value + ";path=/";
+      document.cookie = "googtrans=" + value + ";domain=" + window.location.hostname + ";path=/";
+      window.location.reload();
+    }
+
+    function updateButton() {
+      var button = document.querySelector("[data-translate-toggle]");
+      if (!button) return;
+      button.textContent = translatedToPortuguese() ? "PT/EN" : "EN/PT";
+      button.setAttribute("aria-label", translatedToPortuguese() ? "Translate to English" : "Translate to Portuguese");
+    }
+
+    window.googleTranslateElementInit = function () {
+      new google.translate.TranslateElement({
+        pageLanguage: sourceLanguage,
+        includedLanguages: targetLanguage,
+        autoDisplay: false
+      }, "google_translate_element");
+      updateButton();
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+      updateButton();
+      var button = document.querySelector("[data-translate-toggle]");
+      if (!button) return;
+      button.addEventListener("click", function () {
+        setTranslation(translatedToPortuguese() ? sourceLanguage : targetLanguage);
+      });
+    });
+  }());
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

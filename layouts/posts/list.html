@@ -1,0 +1,38 @@
+{{ define "title" }}
+  {{ title (i18n (lower .Title)) | default .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  <section class="container list posts-list">
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="{{ .Permalink | safeURL }}">
+          {{ title (i18n (lower .Title)) | default .Title }}
+        </a>
+      </h1>
+    </header>
+
+    {{ .Content }}
+
+    <div class="post-grid">
+      {{- range .Paginator.Pages -}}
+        <article class="post-card">
+          <span class="post-card-kicker">Writeup</span>
+          <h2>
+            <a href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+          {{ with .Description }}
+            <p>{{ . }}</p>
+          {{ end }}
+          <div class="post-card-meta">
+            <span>{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+            {{ with .Params.tags }}
+              <span>{{ delimit (first 3 .) " / " }}</span>
+            {{ end }}
+          </div>
+        </article>
+      {{- end -}}
+    </div>
+
+    {{ partial "pagination.html" . }}
+  </section>
+{{ end }}

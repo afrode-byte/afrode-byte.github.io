@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Reflected Cross-Site Scripting in Login Functionality · Afrode
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Jailton Lima">
+<meta name="description" content="Analyzing a reflected Cross-Site Scripting vulnerability discovered during a login workflow.">
+<meta name="keywords" content="web application security, penetration testing, offensive security, owasp wstg, api security, burp suite">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Reflected Cross-Site Scripting in Login Functionality">
+	<meta name="twitter:description" content="Analyzing a reflected Cross-Site Scripting vulnerability discovered during a login workflow.">
+
+<meta property="og:url" content="https://afrode-byte.github.io/posts/reflected-cross-site-scripting-in-login-functionality/">
+	<meta property="og:site_name" content="Afrode">
+	<meta property="og:title" content="Reflected Cross-Site Scripting in Login Functionality">
+	<meta property="og:description" content="Analyzing a reflected Cross-Site Scripting vulnerability discovered during a login workflow.">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-07-07T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-07T00:00:00+00:00">
+		<meta property="article:tag" content="Cross-Site Scripting">
+		<meta property="article:tag" content="Reflected XSS">
+		<meta property="article:tag" content="HTML Injection">
+		<meta property="article:tag" content="Cloudflare">
+		<meta property="article:tag" content="WAF">
+		<meta property="article:tag" content="Burp Suite">
+
+
+
+
+<link rel="canonical" href="https://afrode-byte.github.io/posts/reflected-cross-site-scripting-in-login-functionality/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.f6b1b35a7b02521b25338f6cf58975f9980a6c12847763fe35a48307758cd1e7.css" integrity="sha256-9rGzWnsCUhslM49s9Yl1&#43;ZgKbBKEd2P&#43;NaSDB3WM0ec=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+  
+  
+    
+    <link rel="stylesheet" href="/scss/custom.min.6c46c54dce27d5bd9bdedc47d83f8b3ef04f26e4db1c5fbfda9883ccd6f2eb4b.css" integrity="sha256-bEbFTc4n1b2b3txH2D&#43;LPvBPJuTbHF&#43;/2piDzNby60s=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://afrode-byte.github.io/">
+      Afrode
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/certifications/">Certifications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">Contact</a>
+            </li>
+          
+        
+        <li class="navigation-item menu-separator">
+          <span>|</span>
+        </li>
+        <li class="navigation-item">
+          <button class="language-switch" type="button" data-translate-toggle>EN/PT</button>
+        </li>
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://afrode-byte.github.io/posts/reflected-cross-site-scripting-in-login-functionality/">
+              Reflected Cross-Site Scripting in Login Functionality
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-07-07T00:00:00Z">
+                July 7, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/cross-site-scripting/">Cross-Site Scripting</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/reflected-xss/">Reflected XSS</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/html-injection/">HTML Injection</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/cloudflare/">Cloudflare</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/waf/">WAF</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/burp-suite/">Burp Suite</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <h1 id="reflected-cross-site-scripting-in-login-functionality">
+  Reflected Cross-Site Scripting in Login Functionality
+  <a class="heading-link" href="#reflected-cross-site-scripting-in-login-functionality">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="overview">
+  Overview
+  <a class="heading-link" href="#overview">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Cross-Site Scripting (XSS) vulnerabilities are commonly associated with search pages, contact forms, or other features that directly reflect user input. However, authentication workflows can also expose unexpected attack surfaces when applications fail to properly validate or encode user-controlled data.</p>
+<p>This article describes how a reflected Cross-Site Scripting vulnerability was identified during a login workflow, how the initial HTML Injection was escalated to JavaScript execution, and how different encoding techniques helped bypass filtering mechanisms.</p>
+<hr>
+<h2 id="discovery">
+  Discovery
+  <a class="heading-link" href="#discovery">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Instead of focusing only on authenticated functionality, I explored the application&rsquo;s public attack surface.</p>
+<p>During testing, I intentionally created a new account but did not complete the account activation process. When attempting to authenticate with the inactive account, the application redirected the browser to the following endpoint:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>https://127.0.0.1/?warning=
+</span></span></code></pre></div><p>The value supplied to the <code>warning</code> parameter was reflected in the application&rsquo;s response.</p>
+<p>The first objective was not to execute JavaScript, but simply to verify whether arbitrary HTML could be injected into the page.</p>
+<hr>
+<h2 id="initial-observation">
+  Initial Observation
+  <a class="heading-link" href="#initial-observation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Basic HTML injection confirmed that user-controlled input was reflected without proper output encoding.</p>
+<p>At this stage, JavaScript execution was still blocked due to filtering and protection mechanisms.</p>
+<p>This confirmed that the application was vulnerable to HTML Injection and that further analysis was required to determine whether the issue could be escalated to Cross-Site Scripting.</p>
+<hr>
+<h2 id="waf-analysis">
+  WAF Analysis
+  <a class="heading-link" href="#waf-analysis">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The application was protected by Cloudflare.</p>
+<p>Common XSS payloads were blocked immediately, indicating that both the Web Application Firewall and additional server-side filtering were inspecting incoming requests.</p>
+<p>Different HTML elements were tested in order to understand the application&rsquo;s filtering behavior.</p>
+<p>Some tags were rejected while others produced different responses, providing valuable information about how input validation was being performed.</p>
+<p>Understanding these differences was more valuable than repeatedly sending the same payload.</p>
+<hr>
+<h2 id="payload-evolution">
+  Payload Evolution
+  <a class="heading-link" href="#payload-evolution">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The original payload was based on a technique shared by Rodolfo Assis (Brute Logic), who has published extensive research on WAF bypass techniques.</p>
+<p>The payload was adapted by applying <strong>double URL encoding</strong> to the <code>&lt;</code> and <code>&gt;</code> characters.</p>
+<p>Normal URL encoding:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;  -&gt; %3C
+</span></span><span style="display:flex;"><span>&gt;  -&gt; %3E
+</span></span></code></pre></div><p>Double URL encoding:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>&lt;  -&gt; %253C
+</span></span><span style="display:flex;"><span>&gt;  -&gt; %253E
+</span></span></code></pre></div><p>The final payload became:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>%253cSvg%20Only=1%20OnLoad=confirm(document.cookie)%253E
+</span></span></code></pre></div><p>Resulting vulnerable request:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>https://127.0.0.1/?warning=%253cSvg%20Only=1%20OnLoad=confirm(document.cookie)%253E
+</span></span></code></pre></div><hr>
+<h2 id="why-double-url-encoding-worked">
+  Why Double URL Encoding Worked
+  <a class="heading-link" href="#why-double-url-encoding-worked">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Many filtering mechanisms inspect user input after a single decoding step.</p>
+<p>If the application performs an additional decoding operation later during request processing, payloads encoded twice may bypass the initial inspection while still producing executable HTML in the final response.</p>
+<p>Although this behavior depends entirely on the application&rsquo;s processing pipeline, testing alternative encoding strategies is often worthwhile when HTML Injection has already been confirmed.</p>
+<hr>
+<h2 id="thought-process">
+  Thought Process
+  <a class="heading-link" href="#thought-process">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>One important lesson from this assessment was that the reflected parameter was not discovered through automated scanning.</p>
+<p>It appeared only after interacting with an alternative application workflow involving an inactive account.</p>
+<p>Rather than immediately attempting complex payloads, the testing process followed a gradual approach:</p>
+<ol>
+<li>Understand the application&rsquo;s behavior.</li>
+<li>Identify reflected input.</li>
+<li>Confirm HTML Injection.</li>
+<li>Study filtering behavior.</li>
+<li>Modify payload encoding.</li>
+<li>Attempt JavaScript execution.</li>
+</ol>
+<p>Understanding the application&rsquo;s workflow proved significantly more valuable than relying exclusively on payload lists.</p>
+<hr>
+<h2 id="key-takeaways">
+  Key Takeaways
+  <a class="heading-link" href="#key-takeaways">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Login functionality may expose unexpected attack surfaces.</li>
+<li>HTML Injection should never be dismissed without further investigation.</li>
+<li>Different HTML elements may trigger different filtering behavior.</li>
+<li>Understanding how input is processed is often more valuable than sending hundreds of payloads.</li>
+<li>Alternative encoding techniques, including double URL encoding, may help evaluate WAF behavior under specific circumstances.</li>
+</ul>
+<hr>
+<h2 id="references">
+  References
+  <a class="heading-link" href="#references">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>OWASP Web Security Testing Guide (WSTG)</li>
+<li>OWASP Cross-Site Scripting Prevention Cheat Sheet</li>
+<li>Brute Logic XSS Research</li>
+<li>PortSwigger Web Security Academy – Cross-Site Scripting</li>
+<li>RFC 3986 – Uniform Resource Identifier (URI): Generic Syntax</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2026
+     Jailton Lima 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div id="google_translate_element" aria-hidden="true"></div>
+<script>
+  (function () {
+    var sourceLanguage = "en";
+    var targetLanguage = "pt";
+
+    function readCookie(name) {
+      return document.cookie
+        .split(";")
+        .map(function (item) { return item.trim(); })
+        .filter(function (item) { return item.indexOf(name + "=") === 0; })
+        .map(function (item) { return decodeURIComponent(item.slice(name.length + 1)); })[0] || "";
+    }
+
+    function translatedToPortuguese() {
+      return readCookie("googtrans").indexOf("/" + sourceLanguage + "/" + targetLanguage) !== -1;
+    }
+
+    function setTranslation(language) {
+      var value = language === targetLanguage ? "/" + sourceLanguage + "/" + targetLanguage : "/" + sourceLanguage + "/" + sourceLanguage;
+      document.cookie = "googtrans=" + value + ";path=/";
+      document.cookie = "googtrans=" + value + ";domain=" + window.location.hostname + ";path=/";
+      window.location.reload();
+    }
+
+    function updateButton() {
+      var button = document.querySelector("[data-translate-toggle]");
+      if (!button) return;
+      button.textContent = translatedToPortuguese() ? "PT/EN" : "EN/PT";
+      button.setAttribute("aria-label", translatedToPortuguese() ? "Translate to English" : "Translate to Portuguese");
+    }
+
+    window.googleTranslateElementInit = function () {
+      new google.translate.TranslateElement({
+        pageLanguage: sourceLanguage,
+        includedLanguages: targetLanguage,
+        autoDisplay: false
+      }, "google_translate_element");
+      updateButton();
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+      updateButton();
+      var button = document.querySelector("[data-translate-toggle]");
+      if (!button) return;
+      button.addEventListener("click", function () {
+        setTranslation(translatedToPortuguese() ? sourceLanguage : targetLanguage);
+      });
+    });
+  }());
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

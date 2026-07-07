@@ -1,19 +1,27 @@
 baseURL = "https://afrode-byte.github.io/"
-title = ""
+title = "Afrode"
 theme = "hugo-coder"
-languageCode = "en-us"
+locale = "en-US"
 defaultContentLanguage = "en"
 
 [pagination]
 pagerSize = 10
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [params]
-author = "Jailton De Macena Lima"
+author = "Jailton Lima"
 info = "Web Application Penetration Tester"
-description = "Personal portfolio focused on Web Application Security, Offensive Security Research and practical penetration testing methodology."
+description = "Portfolio focused on web application security, offensive security research and practical penetration testing methodology."
 keywords = "web application security, penetration testing, offensive security, owasp wstg, api security, burp suite"
 colorScheme = "dark"
 hideColorSchemeToggle = false
+customSCSS = ["scss/custom.scss"]
+
+[params.footer]
+hideCopyright = false
+hideCredits = true
 
 [[params.social]]
 name = "GitHub"
@@ -27,32 +35,33 @@ icon = "fa-brands fa-linkedin"
 weight = 2
 url = "https://www.linkedin.com/in/jailton-de-macena-lima/"
 
+[[params.social]]
+name = "Intigriti"
+icon = "fa-solid fa-bug"
+weight = 3
+url = "https://app.intigriti.com/researcher/profile/jailton"
+
+[[menu.main]]
+name = "Home"
+weight = 1
+url = "/"
+
 [[menu.main]]
 name = "About"
-weight = 1
-url = "about/"
-
-[[menu.main]]
-name = "Methodology"
 weight = 2
-url = "methodology/"
+url = "/about/"
 
 [[menu.main]]
-name = "Research"
+name = "Posts"
 weight = 3
-url = "research/"
-
-[[menu.main]]
-name = "Projects"
-weight = 4
-url = "projects/"
+url = "/posts/"
 
 [[menu.main]]
 name = "Certifications"
-weight = 5
-url = "certifications/"
+weight = 4
+url = "/certifications/"
 
 [[menu.main]]
 name = "Contact"
-weight = 6
-url = "contact/"
+weight = 5
+url = "/contact/"

