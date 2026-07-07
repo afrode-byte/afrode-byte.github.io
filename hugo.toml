@@ -1,0 +1,23 @@
+baseURL = "https://afrode-byte.github.io/"
+title = "Jailton De Macena Lima"
+theme = "hugo-coder"
+languageCode = "en-us"
+
+[params]
+author = "Jailton De Macena Lima"
+info = "Web Penetration Tester | BSCP | eWPT"
+description = "Portfolio focused on Web Application Security, API Security and Offensive Security."
+keywords = "pentest, web security, bug bounty, burp suite, owasp, api security"
+colorScheme = "dark"
+
+[[params.social]]
+name = "GitHub"
+icon = "fa-brands fa-github"
+weight = 1
+url = "https://github.com/afrode-byte/"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "fa-brands fa-linkedin"
+weight = 2
+url = "https://www.linkedin.com/in/jailton-de-macena-lima/?locale=en-US"

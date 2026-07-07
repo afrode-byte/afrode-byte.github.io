@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Jailton De Macena Lima</title>
+		<link>http://localhost:1313/</link>
+		<description>Recent content on Jailton De Macena Lima</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 07 Jul 2026 08:26:21 -0300</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Certifications</title>
+				<link>http://localhost:1313/certifications/</link>
+				<pubDate>Tue, 07 Jul 2026 08:26:21 -0300</pubDate>
+				<guid>http://localhost:1313/certifications/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tools</title>
+				<link>http://localhost:1313/tools/</link>
+				<pubDate>Tue, 07 Jul 2026 08:26:17 -0300</pubDate>
+				<guid>http://localhost:1313/tools/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Writeups</title>
+				<link>http://localhost:1313/writeups/</link>
+				<pubDate>Tue, 07 Jul 2026 08:26:14 -0300</pubDate>
+				<guid>http://localhost:1313/writeups/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Projects</title>
+				<link>http://localhost:1313/projects/</link>
+				<pubDate>Tue, 07 Jul 2026 08:26:09 -0300</pubDate>
+				<guid>http://localhost:1313/projects/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Methodology</title>
+				<link>http://localhost:1313/methodology/</link>
+				<pubDate>Tue, 07 Jul 2026 08:26:05 -0300</pubDate>
+				<guid>http://localhost:1313/methodology/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>About</title>
+				<link>http://localhost:1313/about/</link>
+				<pubDate>Tue, 07 Jul 2026 08:25:24 -0300</pubDate>
+				<guid>http://localhost:1313/about/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>
