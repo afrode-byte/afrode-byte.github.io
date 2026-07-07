@@ -1,4 +1,17 @@
 :root {
+  --portfolio-bg: #ffffff;
+  --portfolio-panel: #ffffff;
+  --portfolio-panel-soft: #f6f8fa;
+  --portfolio-border: #d0d7de;
+  --portfolio-text: #24292f;
+  --portfolio-muted: #57606a;
+  --portfolio-accent: #2f81f7;
+  --portfolio-accent-strong: #0969da;
+  --portfolio-green: #1a7f37;
+}
+
+body.colorscheme-dark,
+body.colorscheme-auto {
   --portfolio-bg: #0d1117;
   --portfolio-panel: #151b23;
   --portfolio-panel-soft: #111820;
@@ -95,7 +108,7 @@ body {
 }
 
 .ssti-proof {
-  background: rgba(13, 17, 23, 0.72);
+  background: var(--portfolio-panel);
   border: 1px solid var(--portfolio-border);
   border-radius: 8px;
   display: grid;
@@ -180,7 +193,7 @@ body {
 }
 
 .button.button-secondary {
-  background: rgba(139, 148, 158, 0.08);
+  background: var(--portfolio-panel-soft);
   color: var(--portfolio-text);
 }
 
@@ -200,6 +213,12 @@ body {
   background: linear-gradient(180deg, var(--portfolio-panel), var(--portfolio-panel-soft));
   border: 1px solid var(--portfolio-border);
   border-radius: 8px;
+  box-shadow: 0 16px 45px rgba(31, 35, 40, 0.08);
+}
+
+body.colorscheme-dark .feature-card,
+body.colorscheme-dark .post-card,
+body.colorscheme-dark .certification-card {
   box-shadow: 0 16px 45px rgba(1, 4, 9, 0.24);
 }
 
@@ -311,7 +330,7 @@ body {
   background: linear-gradient(180deg, var(--portfolio-panel), var(--portfolio-panel-soft));
   border: 1px solid var(--portfolio-border);
   border-radius: 8px;
-  box-shadow: 0 16px 45px rgba(1, 4, 9, 0.2);
+  box-shadow: 0 16px 45px rgba(31, 35, 40, 0.08);
   padding: 2rem;
 }
 
