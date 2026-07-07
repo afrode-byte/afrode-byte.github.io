@@ -1,5 +1,5 @@
 baseURL = "https://afrode-byte.github.io/"
-title = "Jailton De Macena Lima"
+title = ""
 theme = "hugo-coder"
 languageCode = "en-us"
 defaultContentLanguage = "en"
@@ -33,31 +33,26 @@ weight = 1
 url = "about/"
 
 [[menu.main]]
-name = "Knowledge"
-weight = 2
-url = "knowledge/"
-
-[[menu.main]]
 name = "Methodology"
-weight = 3
+weight = 2
 url = "methodology/"
 
 [[menu.main]]
 name = "Research"
-weight = 4
+weight = 3
 url = "research/"
 
 [[menu.main]]
 name = "Projects"
-weight = 5
+weight = 4
 url = "projects/"
 
 [[menu.main]]
 name = "Certifications"
-weight = 6
+weight = 5
 url = "certifications/"
 
 [[menu.main]]
 name = "Contact"
-weight = 7
+weight = 6
 url = "contact/"

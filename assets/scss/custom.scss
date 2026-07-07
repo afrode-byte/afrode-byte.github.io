@@ -1,0 +1,59 @@
+body {
+  background: #0d1117;
+  color: #f0f6fc;
+}
+
+.content {
+  max-width: 860px;
+}
+
+.navigation a,
+.navigation-title {
+  color: #f0f6fc;
+}
+
+.navigation a:hover {
+  color: #58a6ff;
+}
+
+h1, h2, h3 {
+  color: #f0f6fc;
+  letter-spacing: -0.03em;
+}
+
+p {
+  color: #c9d1d9;
+  line-height: 1.8;
+}
+
+a {
+  color: #58a6ff;
+}
+
+pre, code {
+  background: #161b22;
+  color: #f0f6fc;
+}
+
+.about h1 {
+  font-size: 3.8rem;
+  line-height: 1.1;
+}
+
+.about h2 {
+  color: #8b949e;
+  font-weight: 400;
+}
+
+.avatar img {
+  border-radius: 50%;
+  border: 2px solid #30363d;
+}
+
+.list ul li {
+  border-bottom: 1px solid #30363d;
+}
+
+.footer {
+  color: #8b949e;
+}
