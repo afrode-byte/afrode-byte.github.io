@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Web Application Security on Afrode</title>
+		<link>http://localhost:1313/tags/web-application-security/</link>
+		<description>Recent content in Web Application Security on Afrode</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/web-application-security/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Redacted BSCP Notes: Two Applications, Multiple Attack Surfaces</title>
+				<link>http://localhost:1313/posts/bscp-redacted-notes-two-application-assessment/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/bscp-redacted-notes-two-application-assessment/</guid>
+				<description>&lt;h1 id=&#34;redacted-bscp-notes-two-applications-multiple-attack-surfaces&#34;&gt;&#xD;&#xA;  Redacted BSCP Notes: Two Applications, Multiple Attack Surfaces&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#redacted-bscp-notes-two-applications-multiple-attack-surfaces&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;overview&#34;&gt;&#xD;&#xA;  Overview&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#overview&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;The Burp Suite Certified Practitioner (BSCP) exam is designed to test practical web application security skills across realistic applications and vulnerability classes.&lt;/p&gt;&#xA;&lt;p&gt;This post is intentionally redacted. It does not include exam-specific details, exact payloads, target-specific paths or step-by-step exploitation chains. Instead, it summarizes the types of issues I worked through and the methodology behind analyzing multiple attack surfaces.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Stealing Users OAuth Tokens through redirect_uri Parameter</title>
+				<link>http://localhost:1313/posts/stealing-users-oauth-tokens-through-redirect-uri-parameter/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/stealing-users-oauth-tokens-through-redirect-uri-parameter/</guid>
+				<description>&lt;h1 id=&#34;stealing-users-oauth-tokens-through-redirect_uri-parameter&#34;&gt;&#xD;&#xA;  Stealing Users OAuth Tokens through redirect_uri Parameter&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#stealing-users-oauth-tokens-through-redirect_uri-parameter&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;overview&#34;&gt;&#xD;&#xA;  Overview&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#overview&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;OAuth and social login flows are highly sensitive because they handle authentication state, identity tokens and access tokens. A small validation issue in parameters such as &lt;code&gt;redirect_uri&lt;/code&gt; can have a much larger impact when tokens are returned through the browser.&lt;/p&gt;&#xA;&lt;p&gt;During bug bounty testing, I identified an OAuth flow where the &lt;code&gt;redirect_uri&lt;/code&gt; parameter could be abused through an open redirect behavior. Under specific conditions, this allowed OAuth tokens to be redirected to an attacker-controlled endpoint.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

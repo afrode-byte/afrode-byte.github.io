@@ -6,6 +6,7 @@ tags = [
 "Cross-Site Scripting",
 "Reflected XSS",
 "HTML Injection",
+"Bug Bounty",
 "Cloudflare",
 "WAF",
 "Burp Suite"
@@ -137,8 +138,7 @@ Understanding the application's workflow proved significantly more valuable than
 
 ## References
 
-* OWASP Web Security Testing Guide (WSTG)
-* OWASP Cross-Site Scripting Prevention Cheat Sheet
-* Brute Logic XSS Research
-* PortSwigger Web Security Academy – Cross-Site Scripting
-* RFC 3986 – Uniform Resource Identifier (URI): Generic Syntax
+* [OWASP Web Security Testing Guide (WSTG)](https://owasp.org/www-project-web-security-testing-guide/)
+* [OWASP Cross-Site Scripting Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
+* [Brute Logic - The Art of XSS WAF Bypass](https://brutelogic.net/ebooks/brute-art-bypass/)
+* [PortSwigger Web Security Academy - Cross-Site Scripting](https://portswigger.net/web-security/cross-site-scripting)

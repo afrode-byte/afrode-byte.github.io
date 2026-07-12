@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Social Login on Afrode</title>
+		<link>http://localhost:1313/tags/social-login/</link>
+		<description>Recent content in Social Login on Afrode</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/social-login/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Open Redirect on Register, Login, Signout and Social Login Flows</title>
+				<link>http://localhost:1313/posts/open-redirect-on-register-login-signout-and-social-login/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/open-redirect-on-register-login-signout-and-social-login/</guid>
+				<description>&lt;h1 id=&#34;open-redirect-on-register-login-signout-and-social-login-flows&#34;&gt;&#xD;&#xA;  Open Redirect on Register, Login, Signout and Social Login Flows&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#open-redirect-on-register-login-signout-and-social-login-flows&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;overview&#34;&gt;&#xD;&#xA;  Overview&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#overview&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Open Redirect vulnerabilities are often treated as low severity when they appear in isolated navigation flows. However, when redirect behavior is present in authentication-related functionality such as register, login, signout or social login, the impact can become more relevant.&lt;/p&gt;&#xA;&lt;p&gt;During bug bounty testing, I identified multiple redirect behaviors across authentication flows where user-controlled parameters influenced the final destination. The issue required understanding how the application parsed, encoded and validated redirect values.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

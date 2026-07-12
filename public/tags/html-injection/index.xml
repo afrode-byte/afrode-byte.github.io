@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>HTML Injection on Afrode</title>
-		<link>https://afrode-byte.github.io/tags/html-injection/</link>
+		<link>http://localhost:1313/tags/html-injection/</link>
 		<description>Recent content in HTML Injection on Afrode</description>
 		<generator>Hugo</generator>
 		<language>en-US</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Tue, 07 Jul 2026 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://afrode-byte.github.io/tags/html-injection/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/html-injection/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Reflected Cross-Site Scripting in Login Functionality</title>
-				<link>https://afrode-byte.github.io/posts/reflected-cross-site-scripting-in-login-functionality/</link>
+				<link>http://localhost:1313/posts/reflected-cross-site-scripting-in-login-functionality/</link>
 				<pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
-				<guid>https://afrode-byte.github.io/posts/reflected-cross-site-scripting-in-login-functionality/</guid>
+				<guid>http://localhost:1313/posts/reflected-cross-site-scripting-in-login-functionality/</guid>
 				<description>&lt;h1 id=&#34;reflected-cross-site-scripting-in-login-functionality&#34;&gt;&#xD;&#xA;  Reflected Cross-Site Scripting in Login Functionality&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#reflected-cross-site-scripting-in-login-functionality&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h1&gt;&#xD;&#xA;&lt;h2 id=&#34;overview&#34;&gt;&#xD;&#xA;  Overview&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#overview&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Cross-Site Scripting (XSS) vulnerabilities are commonly associated with search pages, contact forms, or other features that directly reflect user input. However, authentication workflows can also expose unexpected attack surfaces when applications fail to properly validate or encode user-controlled data.&lt;/p&gt;&#xA;&lt;p&gt;This article describes how a reflected Cross-Site Scripting vulnerability was identified during a login workflow, how the initial HTML Injection was escalated to JavaScript execution, and how different encoding techniques helped bypass filtering mechanisms.&lt;/p&gt;</description>
 			</item>
 	</channel>

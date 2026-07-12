@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tags on Afrode</title>
-		<link>https://afrode-byte.github.io/tags/</link>
+		<link>http://localhost:1313/tags/</link>
 		<description>Recent content in Tags on Afrode</description>
 		<generator>Hugo</generator>
 		<language>en-US</language>
@@ -10,49 +10,189 @@
 		
 		
 		
-			<lastBuildDate>Tue, 07 Jul 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Sun, 12 Jul 2026 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://afrode-byte.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Access Token</title>
+				<link>http://localhost:1313/tags/access-token/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/access-token/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Account Takeover</title>
+				<link>http://localhost:1313/tags/account-takeover/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/account-takeover/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Authentication</title>
+				<link>http://localhost:1313/tags/authentication/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/authentication/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>BSCP</title>
+				<link>http://localhost:1313/tags/bscp/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/bscp/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Bug Bounty</title>
+				<link>http://localhost:1313/tags/bug-bounty/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/bug-bounty/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Burp Suite</title>
-				<link>https://afrode-byte.github.io/tags/burp-suite/</link>
-				<pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
-				<guid>https://afrode-byte.github.io/tags/burp-suite/</guid>
+				<link>http://localhost:1313/tags/burp-suite/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/burp-suite/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Command Injection</title>
+				<link>http://localhost:1313/tags/command-injection/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/command-injection/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>CORS</title>
+				<link>http://localhost:1313/tags/cors/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/cors/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>HTTP Request Smuggling</title>
+				<link>http://localhost:1313/tags/http-request-smuggling/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/http-request-smuggling/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Login</title>
+				<link>http://localhost:1313/tags/login/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/login/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>OAuth</title>
+				<link>http://localhost:1313/tags/oauth/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/oauth/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Open Redirect</title>
+				<link>http://localhost:1313/tags/open-redirect/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/open-redirect/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>PortSwigger</title>
+				<link>http://localhost:1313/tags/portswigger/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/portswigger/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Privilege Escalation</title>
+				<link>http://localhost:1313/tags/privilege-escalation/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/privilege-escalation/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Redirect_uri</title>
+				<link>http://localhost:1313/tags/redirect_uri/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/redirect_uri/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Register</title>
+				<link>http://localhost:1313/tags/register/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/register/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Remote File Inclusion</title>
+				<link>http://localhost:1313/tags/remote-file-inclusion/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/remote-file-inclusion/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Signout</title>
+				<link>http://localhost:1313/tags/signout/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/signout/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Social Login</title>
+				<link>http://localhost:1313/tags/social-login/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/social-login/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>URL Encoding</title>
+				<link>http://localhost:1313/tags/url-encoding/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/url-encoding/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Web Application Security</title>
+				<link>http://localhost:1313/tags/web-application-security/</link>
+				<pubDate>Sun, 12 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/tags/web-application-security/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Cloudflare</title>
-				<link>https://afrode-byte.github.io/tags/cloudflare/</link>
+				<link>http://localhost:1313/tags/cloudflare/</link>
 				<pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
-				<guid>https://afrode-byte.github.io/tags/cloudflare/</guid>
+				<guid>http://localhost:1313/tags/cloudflare/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Cross-Site Scripting</title>
-				<link>https://afrode-byte.github.io/tags/cross-site-scripting/</link>
+				<link>http://localhost:1313/tags/cross-site-scripting/</link>
 				<pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
-				<guid>https://afrode-byte.github.io/tags/cross-site-scripting/</guid>
+				<guid>http://localhost:1313/tags/cross-site-scripting/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>HTML Injection</title>
-				<link>https://afrode-byte.github.io/tags/html-injection/</link>
+				<link>http://localhost:1313/tags/html-injection/</link>
 				<pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
-				<guid>https://afrode-byte.github.io/tags/html-injection/</guid>
+				<guid>http://localhost:1313/tags/html-injection/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Reflected XSS</title>
-				<link>https://afrode-byte.github.io/tags/reflected-xss/</link>
+				<link>http://localhost:1313/tags/reflected-xss/</link>
 				<pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
-				<guid>https://afrode-byte.github.io/tags/reflected-xss/</guid>
+				<guid>http://localhost:1313/tags/reflected-xss/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>WAF</title>
-				<link>https://afrode-byte.github.io/tags/waf/</link>
+				<link>http://localhost:1313/tags/waf/</link>
 				<pubDate>Tue, 07 Jul 2026 00:00:00 +0000</pubDate>
-				<guid>https://afrode-byte.github.io/tags/waf/</guid>
+				<guid>http://localhost:1313/tags/waf/</guid>
 				<description></description>
 			</item>
 	</channel>

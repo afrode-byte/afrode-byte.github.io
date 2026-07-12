@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Redacted BSCP Notes: Two Applications, Multiple Attack Surfaces · Afrode
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Jailton Lima">
+<meta name="description" content="A redacted overview of vulnerabilities identified across two web applications during BSCP-style testing.">
+<meta name="keywords" content="web application security, penetration testing, offensive security, owasp wstg, api security, burp suite">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Redacted BSCP Notes: Two Applications, Multiple Attack Surfaces">
+	<meta name="twitter:description" content="A redacted overview of vulnerabilities identified across two web applications during BSCP-style testing.">
+
+<meta property="og:url" content="http://localhost:1313/posts/bscp-redacted-notes-two-application-assessment/">
+	<meta property="og:site_name" content="Afrode">
+	<meta property="og:title" content="Redacted BSCP Notes: Two Applications, Multiple Attack Surfaces">
+	<meta property="og:description" content="A redacted overview of vulnerabilities identified across two web applications during BSCP-style testing.">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-07-12T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-07-12T00:00:00+00:00">
+		<meta property="article:tag" content="BSCP">
+		<meta property="article:tag" content="PortSwigger">
+		<meta property="article:tag" content="Burp Suite">
+		<meta property="article:tag" content="Web Application Security">
+		<meta property="article:tag" content="CORS">
+		<meta property="article:tag" content="HTTP Request Smuggling">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/bscp-redacted-notes-two-application-assessment/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/custom.css" media="screen">
+  
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Afrode
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/">Home</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Posts</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/certifications/">Certifications</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">Contact</a>
+            </li>
+          
+        
+        <li class="navigation-item menu-separator">
+          <span>|</span>
+        </li>
+        <li class="navigation-item">
+          <button class="language-switch" type="button" data-translate-toggle>EN/PT</button>
+        </li>
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/bscp-redacted-notes-two-application-assessment/">
+              Redacted BSCP Notes: Two Applications, Multiple Attack Surfaces
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-07-12T00:00:00Z">
+                July 12, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              6-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/bscp/">BSCP</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/portswigger/">PortSwigger</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/burp-suite/">Burp Suite</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/web-application-security/">Web Application Security</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/cors/">CORS</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/http-request-smuggling/">HTTP Request Smuggling</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/remote-file-inclusion/">Remote File Inclusion</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/command-injection/">Command Injection</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/privilege-escalation/">Privilege Escalation</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <h1 id="redacted-bscp-notes-two-applications-multiple-attack-surfaces">
+  Redacted BSCP Notes: Two Applications, Multiple Attack Surfaces
+  <a class="heading-link" href="#redacted-bscp-notes-two-applications-multiple-attack-surfaces">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="overview">
+  Overview
+  <a class="heading-link" href="#overview">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The Burp Suite Certified Practitioner (BSCP) exam is designed to test practical web application security skills across realistic applications and vulnerability classes.</p>
+<p>This post is intentionally redacted. It does not include exam-specific details, exact payloads, target-specific paths or step-by-step exploitation chains. Instead, it summarizes the types of issues I worked through and the methodology behind analyzing multiple attack surfaces.</p>
+<p>The goal is to document the learning process without exposing sensitive exam content.</p>
+<hr>
+<h2 id="scope">
+  Scope
+  <a class="heading-link" href="#scope">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The assessment involved two separate applications with different behaviors, controls and vulnerability patterns.</p>
+<p>For clarity, I will refer to them as:</p>
+<ul>
+<li><strong>App 1</strong></li>
+<li><strong>App 2</strong></li>
+</ul>
+<p>Each application required a different testing strategy. Some findings were straightforward once the right feature was identified, while others required chaining behavior, understanding application logic or carefully observing how requests were processed.</p>
+<hr>
+<h2 id="exam-objective-chain">
+  Exam Objective Chain
+  <a class="heading-link" href="#exam-objective-chain">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>PortSwigger&rsquo;s own BSCP exam guidance explains that the exam contains two applications, and each application can be completed in three stages:</p>
+<ol>
+<li>Obtain access to a low-privileged account in the application.</li>
+<li>Use that account to access the admin interface, usually by escalating privileges or compromising the administrator account.</li>
+<li>Use the admin interface to read <code>/home/carlos/secret</code> from the server filesystem.</li>
+</ol>
+<p>This structure applied to both applications. The important part was not treating each vulnerability as isolated. Each issue helped move the assessment closer to the next stage of the objective chain.</p>
+<hr>
+<h2 id="app-1">
+  App 1
+  <a class="heading-link" href="#app-1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="user-enumeration-through-password-reset">
+  User Enumeration through Password Reset
+  <a class="heading-link" href="#user-enumeration-through-password-reset">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The first issue involved user enumeration through the password reset flow.</p>
+<p>Password reset functionality is a common place to look for subtle differences in application behavior. Even when the UI appears generic, the application may still leak whether an account exists through:</p>
+<ul>
+<li>response messages;</li>
+<li>timing differences;</li>
+<li>status codes;</li>
+<li>email delivery behavior;</li>
+<li>redirects or workflow differences.</li>
+</ul>
+<p>In this case, the reset password flow exposed enough behavioral difference to distinguish valid users from invalid ones.</p>
+<p>The impact depends on context, but user enumeration can support targeted attacks, credential stuffing, phishing and account takeover attempts when combined with other weaknesses.</p>
+<p>In the context of the objective chain, this helped with the first goal: obtaining a valid low-privileged account to continue testing authenticated functionality.</p>
+<hr>
+<h3 id="cors-misconfiguration-leading-to-user-data-exposure">
+  CORS Misconfiguration Leading to User Data Exposure
+  <a class="heading-link" href="#cors-misconfiguration-leading-to-user-data-exposure">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The second issue involved a CORS misconfiguration that allowed user data to be read from another origin.</p>
+<p>CORS issues become dangerous when an application:</p>
+<ul>
+<li>reflects or trusts untrusted origins;</li>
+<li>allows credentials in cross-origin requests;</li>
+<li>exposes sensitive authenticated data;</li>
+<li>fails to restrict trusted origins properly.</li>
+</ul>
+<p>In this scenario, the misconfiguration allowed an attacker-controlled origin to access sensitive user information from an authenticated victim session.</p>
+<p>The important lesson was to test CORS behavior against authenticated endpoints, not only public API responses.</p>
+<p>This finding supported the privilege escalation phase because exposed user data helped move from a low-privileged user context to Admin access.</p>
+<hr>
+<h3 id="remote-file-inclusion">
+  Remote File Inclusion
+  <a class="heading-link" href="#remote-file-inclusion">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The third issue was a Remote File Inclusion (RFI) vulnerability.</p>
+<p>The application accepted user-controlled input that influenced a file or resource loading behavior. With insufficient validation, this allowed an external resource to be included by the application.</p>
+<p>RFI can be severe because it may lead to:</p>
+<ul>
+<li>server-side request behavior;</li>
+<li>sensitive data exposure;</li>
+<li>remote code execution in dangerous configurations;</li>
+<li>chaining with other server-side weaknesses.</li>
+</ul>
+<p>The key was identifying where user-controlled input crossed from a normal application parameter into backend resource loading.</p>
+<p>In the final stage of the chain, RFI was the path toward remote code execution and the objective of reading <code>/home/carlos/secret</code>.</p>
+<hr>
+<h2 id="app-2">
+  App 2
+  <a class="heading-link" href="#app-2">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="http-request-smuggling-with-reflected-xss">
+  HTTP Request Smuggling with Reflected XSS
+  <a class="heading-link" href="#http-request-smuggling-with-reflected-xss">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>One of the more interesting issues involved HTTP Request Smuggling behavior using a TE.CL-style discrepancy, combined with reflected XSS in the <code>User-Agent</code> header.</p>
+<p>Request smuggling requires careful observation of how front-end and back-end servers interpret request boundaries differently. When a desynchronization condition exists, it may be possible to influence how another request is processed.</p>
+<p>In this case, the request parsing behavior became more impactful because a reflected XSS sink existed in a header-derived value.</p>
+<p>This reinforced an important point: request smuggling is often not only about the desync itself, but about what the desync can be chained with.</p>
+<p>In this case, chaining the desync behavior with the reflected XSS helped complete the first stage of the exam objective chain: obtaining access to a low-privileged user account in the application.</p>
+<hr>
+<h3 id="privilege-escalation-through-application-logic">
+  Privilege Escalation through Application Logic
+  <a class="heading-link" href="#privilege-escalation-through-application-logic">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Another issue involved privilege escalation caused by flawed application logic.</p>
+<p>The vulnerable behavior was related to a password-related workflow and a cookie-controlled state. By understanding how the application trusted a specific cookie value and how the password flow handled privileged identities, it was possible to reach behavior that should have been restricted.</p>
+<p>I would classify this as a business logic or application logic vulnerability rather than a classic injection issue.</p>
+<p>The important part was not a single payload. The issue came from understanding:</p>
+<ul>
+<li>how the application tracked user state;</li>
+<li>which values were trusted by the server;</li>
+<li>how privileged identities were handled;</li>
+<li>how password-related functionality interacted with authorization checks.</li>
+</ul>
+<p>Logic flaws like this are easy to miss because they often look like normal application behavior until the tester understands the workflow deeply.</p>
+<p>In the exam objective chain, this issue mapped to the second stage: escalating privileges from a low-privileged user context to Admin access.</p>
+<hr>
+<h3 id="command-injection">
+  Command Injection
+  <a class="heading-link" href="#command-injection">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The final issue involved command injection.</p>
+<p>Command injection occurs when user-controlled input reaches an operating system command without safe handling. The impact is usually high because successful exploitation may allow command execution in the context of the application server.</p>
+<p>The testing process focused on identifying where input influenced backend command execution and confirming the behavior safely.</p>
+<p>The most important lesson was to look beyond obvious form fields. Command execution behavior can sometimes be hidden behind utility features, integrations, diagnostics, file operations or background processing.</p>
+<hr>
+<h2 id="methodology-notes">
+  Methodology Notes
+  <a class="heading-link" href="#methodology-notes">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This type of assessment requires moving between different testing modes:</p>
+<ul>
+<li>mapping application functionality;</li>
+<li>looking for behavioral differences;</li>
+<li>testing authentication and authorization flows;</li>
+<li>inspecting headers, cookies and state management;</li>
+<li>reviewing API behavior;</li>
+<li>testing parser and protocol edge cases;</li>
+<li>validating impact without over-testing.</li>
+</ul>
+<p>Burp Suite was central to the workflow, especially for request analysis, repeater-based testing, proxy history review and observing small differences between similar requests.</p>
+<hr>
+<h2 id="key-takeaways">
+  Key Takeaways
+  <a class="heading-link" href="#key-takeaways">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Authentication flows often expose more than login forms.</li>
+<li>CORS testing should include authenticated endpoints.</li>
+<li>Remote File Inclusion issues require understanding backend resource loading and execution context.</li>
+<li>HTTP Request Smuggling becomes more powerful when chained with another sink.</li>
+<li>Application logic flaws depend on workflow understanding, not just payloads.</li>
+<li>Command injection may appear in unexpected features.</li>
+<li>A strong methodology matters more than memorizing vulnerability names.</li>
+</ul>
+<hr>
+<h2 id="references">
+  References
+  <a class="heading-link" href="#references">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><a href="https://portswigger.net/web-security/certification"  class="external-link" target="_blank" rel="noopener">PortSwigger - Burp Suite Certified Practitioner</a></li>
+<li><a href="https://portswigger.net/web-security/certification/exam-hints-and-guidance"  class="external-link" target="_blank" rel="noopener">PortSwigger - BSCP Exam Hints and Guidance</a></li>
+<li><a href="https://portswigger.net/web-security/cors"  class="external-link" target="_blank" rel="noopener">PortSwigger Web Security Academy - CORS</a></li>
+<li><a href="https://portswigger.net/web-security/request-smuggling"  class="external-link" target="_blank" rel="noopener">PortSwigger Web Security Academy - HTTP Request Smuggling</a></li>
+<li><a href="https://portswigger.net/web-security/cross-site-scripting"  class="external-link" target="_blank" rel="noopener">PortSwigger Web Security Academy - Cross-Site Scripting</a></li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11.2-Testing_for_Remote_File_Inclusion"  class="external-link" target="_blank" rel="noopener">OWASP WSTG - Testing for Remote File Inclusion</a></li>
+<li><a href="https://portswigger.net/web-security/os-command-injection"  class="external-link" target="_blank" rel="noopener">PortSwigger Web Security Academy - OS Command Injection</a></li>
+<li><a href="https://owasp.org/www-project-web-security-testing-guide/"  class="external-link" target="_blank" rel="noopener">OWASP Web Security Testing Guide</a></li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2026
+     Jailton Lima 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div id="google_translate_element" aria-hidden="true"></div>
+<script>
+  (function () {
+    var sourceLanguage = "en";
+    var targetLanguage = "pt";
+
+    function readCookie(name) {
+      return document.cookie
+        .split(";")
+        .map(function (item) { return item.trim(); })
+        .filter(function (item) { return item.indexOf(name + "=") === 0; })
+        .map(function (item) { return decodeURIComponent(item.slice(name.length + 1)); })[0] || "";
+    }
+
+    function translatedToPortuguese() {
+      return readCookie("googtrans").indexOf("/" + sourceLanguage + "/" + targetLanguage) !== -1;
+    }
+
+    function setTranslation(language) {
+      var value = language === targetLanguage ? "/" + sourceLanguage + "/" + targetLanguage : "/" + sourceLanguage + "/" + sourceLanguage;
+      document.cookie = "googtrans=" + value + ";path=/";
+      document.cookie = "googtrans=" + value + ";domain=" + window.location.hostname + ";path=/";
+      window.location.reload();
+    }
+
+    function updateButton() {
+      var button = document.querySelector("[data-translate-toggle]");
+      if (!button) return;
+      button.textContent = translatedToPortuguese() ? "PT/EN" : "EN/PT";
+      button.setAttribute("aria-label", translatedToPortuguese() ? "Translate to English" : "Translate to Portuguese");
+    }
+
+    window.googleTranslateElementInit = function () {
+      new google.translate.TranslateElement({
+        pageLanguage: sourceLanguage,
+        includedLanguages: targetLanguage,
+        autoDisplay: false
+      }, "google_translate_element");
+      updateButton();
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+      updateButton();
+      var button = document.querySelector("[data-translate-toggle]");
+      if (!button) return;
+      button.addEventListener("click", function () {
+        setTranslation(translatedToPortuguese() ? sourceLanguage : targetLanguage);
+      });
+    });
+  }());
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
